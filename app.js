@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 
 app.get("/" , (req , res )=>{
-    res.send("Hi, i am root");
+    res.redirect("/listings");
 });
 //  index route
 app.get("/listings",async(req , res)=>{
@@ -107,58 +107,3 @@ app.delete("/listings/:id", async(req , res)=>{
 app.listen(8080 , ()=>{
     console.log("server is listening to port 8080");
 });
-
-
-
-
-
-
-
-
-// app.post("/listings",async (req, res)=>{
-// let listing = req.body.listing;
-// console.log(listing);
-// });
-
-
-
-
-
-
-
-
-
-
-// //new route 
-// app.get("/listings/new",(req , res)=>{
-//     res.render("listing/new.ejs");
-
-// })
-
-
-
-
-// app.get("/testListing", async (req, res) => {
-//     try {
-//         console.log("Route reached");
-
-//         let sampleListing = new Listing({
-//             title: "My New Villa",
-//             description: "By the beach",
-//             price: 1200,
-//             location: "Calangute, Goa",
-//             county: "India"
-//         });
-
-//         console.log("Listing created");
-
-//         await sampleListing.save();
-
-//         console.log("Listing saved");
-
-//         res.send("successful");
-//     } catch (err) {
-//         console.log("ERROR:", err);
-//         res.send("Error occurred");
-//     }
-// });
